@@ -1,5 +1,15 @@
 <div class="center jumbotron">
-  <h1>Welcome to the Sample App</h1>
+  <h1>
+    <% if logged_in? %>
+      
+      Hello! <%= @current_user.name %>.
+
+
+    <% end %>
+
+    Welcome to the Sample App
+
+  </h1>
 
   <h2>
     This is the home page for the
@@ -7,7 +17,13 @@
     sample application.
   </h2>
 
+<% if logged_out? %>
+
   <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+
+<% end %>
+
+
 </div
   <%= link_to image_tag("rails.png", alt: "rails logo"), 'http://rubyonrails.org/', target: "_blank", id: "rails-logo" %>
 
