@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
 
   root 'static_pages#home'
 
@@ -11,7 +10,7 @@ Rails.application.routes.draw do
   
   get 'signup' => 'users#new'
 
-  get 'login' => 'sessions#new'
+  get 'login' => 'sessions#new', as: 'any_customed_pathname_you_like'
 
   post 'login' => 'sessions#create'
 
